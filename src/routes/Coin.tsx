@@ -96,6 +96,11 @@ function Coin() {
         </title>
       </Helmet>
       <Header>
+          <PrevButton>
+            <Link to={'/'}>
+              &#9666;
+            </Link>
+          </PrevButton>
         <Title>
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
         </Title>
@@ -156,11 +161,20 @@ function Coin() {
 
 export default Coin;
 
+const PrevButton = styled.div`
+  cursor: pointer;
+  padding: 10px;
+  margin-right: 20px;
+  position: absolute;
+  left: 0;
+  font-size: 50px;
+`
 
 const Container = styled.div`
   padding: 0 20px;
   max-width: 480px;
   margin: 40px auto;
+  position: relative;
 `;
 const Header = styled.header`
   height: 10vh;
