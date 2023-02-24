@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
-import {useEffect, useState} from "react";
 import {useQuery} from "react-query";
 import {fetchCoins} from "../api";
 import {Helmet} from "react-helmet";
+import {ICoin} from "../types";
 
 
 const Container = styled.div`
@@ -46,43 +46,6 @@ const Title = styled.h1`
   color: ${props => props.theme.accentColor};
   //margin: 20px 0;
 `
-const coins: ICoin[] = [{
-  id: "btc-bitcoin",
-  name: "Bitcoin",
-  symbol: "BTC",
-  rank: 1,
-  is_new: false,
-  is_active: true,
-  type: "coin",
-},
-  {
-    id: "eth-ethereum",
-    name: "Ethereum",
-    symbol: "ETH",
-    rank: 2,
-    is_new: false,
-    is_active: true,
-    type: "coin",
-  },
-  {
-    id: "hex-hex",
-    name: "HEX",
-    symbol: "HEX",
-    rank: 3,
-    is_new: false,
-    is_active: true,
-    type: "token",
-  },]
-
-interface ICoin {
-  id: string,
-  name: string,
-  symbol: string,
-  rank: number,
-  is_new: boolean,
-  is_active: boolean,
-  type: string,
-}
 
 function Coins() {
   const { isLoading, data } = useQuery<ICoin[]>("allCoins", fetchCoins);
