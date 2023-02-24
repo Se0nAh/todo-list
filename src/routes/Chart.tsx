@@ -72,17 +72,28 @@ function Chart({coinId}: ChartProps) {
           options={{
             chart: {
               type: 'candlestick',
-              height: 350
+              height: 350,
+              toolbar: {
+                show: false,
+              },
+              background: "transparent",
             },
             theme: {
               mode: "dark",
             },
-            title: {
-              text: 'CandleStick Chart',
-              align: 'left'
+            grid: {show: false},
+            stroke: {
+              curve: "smooth",
+              width: 4,
+            },
+            yaxis: {
+              show: false,
             },
             xaxis: {
-              type: 'datetime'
+              type: 'datetime',
+              axisBorder: {show: false},
+              axisTicks: {show: false},
+              labels: {show: false},
             },
             tooltip: {
               y: {
