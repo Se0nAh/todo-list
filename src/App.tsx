@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {createGlobalStyle} from "styled-components";
-import ToDoList from "./ToDoList";
+import ToDoList from "./components/ToDoList";
 
 
 
@@ -81,14 +81,14 @@ const GlobalStyle = createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
   }
-
-  button {
-    background: inherit;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-    padding: 0;
-    overflow: visible;
-    cursor: pointer
-  }
+  //
+  //button {
+  //  background: inherit;
+  //  border: none;
+  //  box-shadow: none;
+  //  border-radius: 0;
+  //  padding: 0;
+  //  overflow: visible;
+  //  cursor: pointer
+  //}
 `

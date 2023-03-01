@@ -3,21 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {QueryClient} from "react-query";
 import {darkTheme} from "./theme";
+import {RecoilRoot} from "recoil";
 import {ThemeProvider} from "styled-components";
 
-const queryClient = new QueryClient();
+// const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  // <React.StrictMode>
-  <ThemeProvider theme={darkTheme}>
-    <App/>
-  </ThemeProvider>
-  // </React.StrictMode>
+  <React.StrictMode>
+    <RecoilRoot>
+      <ThemeProvider theme={darkTheme}>
+        <App/>
+      </ThemeProvider>
+    </RecoilRoot>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
