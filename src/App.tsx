@@ -1,39 +1,20 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
-import Router from "./Router";
-import styled, {ThemeProvider} from "styled-components"
 import {createGlobalStyle} from "styled-components";
-import {ReactQueryDevtools} from "react-query/devtools";
-import {darkTheme, lightTheme} from "./theme";
+import ToDoList from "./ToDoList";
+
 
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false)
   return (
-    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-      <GlobalStyle/>
-      <Router/>
-      <ThemeToggleButton onClick={() => {
-        setIsDarkMode(prev => !prev)
-      }}>
-        {isDarkMode ? "Light mode" : "Dark mode"}
-      </ThemeToggleButton>
-      <ReactQueryDevtools/>
-    </ThemeProvider>
+    <>
+      <GlobalStyle />
+      <ToDoList />
+    </>
   );
 }
 
 export default App;
-
-const ThemeToggleButton = styled.button`
-  background-color: ${props => props.theme.textColor};
-  color: ${props => props.theme.bgColor};
-  padding: 10px;
-  border-radius: 10px;
-  position: fixed;
-  bottom: 60px;
-  right: 20px;
-`
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
